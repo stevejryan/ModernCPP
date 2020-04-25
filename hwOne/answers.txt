@@ -1,0 +1,23 @@
+1) Count how many lines are there in "data.dat".
+
+`wc data.dat` -> 175.  I checked on a small test file and it seems like EOF counts as a newline, so you don't need to adjust to account for the fencepost problem.
+
+2) Count how many lines of those contain "dolor" or "dalor"?
+
+`grep -E "dolor|dalor" data.dat | wc` -> 106 lines
+
+How would I do this if some lines contain multiple instances and I wanted to know the total number of instances? Unclear.
+
+3) Count how many words are there in "data.dat"?
+
+1,904
+
+4) Count how many of those start with "mol"?
+
+`grep -E '\bmol' data.dat | wc` -> 36
+\b for the blank character at beginning and ending of words
+
+5) Count how many files in "test_folder" are ".txt" files?
+
+`ls -l | wc' -> 101
+
